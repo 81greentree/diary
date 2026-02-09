@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>what I never said</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      font-family: 'Caveat', cursive;
+    }
+
+    .hero {
+      width: 100%;
+      height: 100%;
+      background-image: url("main.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+      color: white;
+
+      background-color: rgba(0,0,0,0.35);
+      background-blend-mode: darken;
+
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 52px;
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .hint {
+      font-size: 14px;
+      opacity: 0.6;
+    }
+
+    /* 암호 레이어 */
+    .lock {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lock-box {
+      background: rgba(255,255,255,0.95);
+      padding: 28px 34px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .lock-box input {
+      font-family: 'Caveat', cursive;
+      font-size: 20px;
+      padding: 8px 14px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      outline: none;
+      text-align: center;
+    }
+
+    .lock-hint {
+      margin-top: 10px;
+      font-size: 13px;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 메인 화면 (클릭 가능) -->
+  <div class="hero" id="hero">
+    <h1>what I never said</h1>
+    <div class="subtitle">A quiet confession</div>
+    <div class="hint">Enter</div>
+  </div>
+
+  <!-- 암호 -->
+  <div class="lock" id="lock">
+    <div class="lock-box">
+      <input type="password" id="password" placeholder="password">
+      <div class="lock-hint">Enter</div>
+    </div>
+  </div>
+
+  <script>
+    const hero = document.getElementById("hero");
+    const lock = document.getElementById("lock");
+    const password = document.getElementById("password");
+
+    function openLock() {
+      lock.style.display = "flex";
+      password.focus();
+    }
+
+    // 클릭하면 열기 (브라우저 허용)
+    hero.addEventListener("click", openLock);
+
+    // Enter 키
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && lock.style.display !== "flex") {
+        openLock();
+      }
+    });
+
+    // 암호 입력 후 Enter
+    password.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        if (e.target.value === "0319") {
+          location.href = "diary.html";
+        } else {
+          alert("wrong password");
+          e.target.value = "";
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
+
