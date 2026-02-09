@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>2026.02.10</title>
+
+  <!-- 한글 손글씨 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 60px 24px;
+      font-family: 'Gamja Flower', cursive;
+      color: #111;
+
+      /* 종이 질감 배경 */
+      background-color: #fdfdfb;
+      background-image:
+        linear-gradient(0deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+      background-size: 3px 3px;
+    }
+
+    .entry {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255,255,255,0.85);
+      padding: 36px 28px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .date {
+      text-align: center;
+      font-size: 15px;
+      opacity: 0.5;
+      margin-bottom: 28px;
+    }
+
+    .content {
+      border: 1px solid rgba(0,0,0,0.2);
+      padding: 22px;
+      border-radius: 8px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.75;
+      white-space: pre-line;
+      margin: 0;
+    }
+
+    .next {
+      margin-top: 32px;
+      text-align: right;
+      font-size: 15px;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .next:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="entry">
+    <div class="date">2026.02.10</div>
+
+    <div class="content">
+      <p>
+원장님이 드디어 사람을 구하고 계셔. 내가 나가고 본인이 하고 있겠다고 몸이 괜찮아지면 언제든지 와서 일할 수 있도록 자리 비워두고 있겠다 하셔서 고맙기도 부담도 살짝 되었는데 어제 문자가 왔어. 신학기라 학원문의가 많은데 혹시 몸이 괜찮아졌는지 본인 욕심인지 안부차 그러시네. 1년간 쉬기로 지금은 계획을 하고 있어서 정중히 다시 거절을 했어. 신도시라 정원을 두배로는 늘릴 수 있을 것 같았고 내가 기반 잡아 드리고 싶었는데 아쉽기도 하고 다른 좋은 사람이 들어왔으면 싶기도 하고 그래. 요즘은 좋은 사람 구하기가 하늘에 별따기라 원장이 마음고생이 많거든. 선생만 4명이 있는데 중심되는 사람이 없어서 알잖아. 나이 어린 사람들 생각중심이 많이 우리랑 많이 다른 거. 44살까지 외국에서 남편이랑 공부만 했던 양반이라 세상 때 안 묻고 유쾌해서 나도 좋은 친구 같았고 집도 멀지 않아서 바닷가 밤 산책도 같이 하고 그랬는데 난 지금 계획 잡은 걸 꼭 잘 지켜보는데 의미가 더 크니까. 모든 아쉬움을 뒤로하고 난 건강해지기로 했어
+      </p>
+    </div>
+
+    <div class="next" onclick="goNextDate()">
+      다음 일기 ▶
+    </div>
+  </div>
+
+  <!-- ✅ 자바스크립트 (절대 style 안에 넣지 말기) -->
+  <script>
+    function goNextDate() {
+      const current = new Date("2026-02-10");
+      current.setDate(current.getDate() + 1);
+
+      const y = current.getFullYear();
+      const m = String(current.getMonth() + 1).padStart(2, '0');
+      const d = String(current.getDate()).padStart(2, '0');
+
+      location.href = `${y}-${m}-${d}.html`;
+    }
+  </script>
+</body>
+</html>
