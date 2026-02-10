@@ -12,38 +12,34 @@
   padding: 0;
   width: 100%;
   height: 100%;
-}
+    
+    }
 
-body {
-  font-family: 'Caveat', cursive;
-  overflow: hidden;
-}
+    .hero {
+      width: 100%;
+      height: 100%;
+      background-image: url("main.jpg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
 
-/* 🔥 진짜 전체화면 */
-.hero {
-  position: fixed;
-  inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-  background: 
-    linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
-    url("main.jpg");
+      text-align: center;
+      color: white;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+      background-color: rgba(0,0,0,0.35);
+      background-blend-mode: darken;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+      cursor: pointer;
+    }
 
-  text-align: center;
-  color: white;
-}
-    h1
-    {
+    h1 {
       font-size: 52px;
-      font-weight: 400;
+      font-weight: 300;
       margin-bottom: 8px;
     }
 
@@ -145,19 +141,6 @@ body {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
