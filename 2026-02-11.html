@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>2026.02.11</title>
+
+  <!-- 한글 손글씨 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 60px 24px;
+      font-family: 'Gamja Flower', cursive;
+      color: #111;
+
+      /* 종이 질감 배경 */
+      background-color: #fdfdfb;
+      background-image:
+        linear-gradient(0deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+      background-size: 3px 3px;
+    }
+
+    .entry {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255,255,255,0.85);
+      padding: 36px 28px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .date {
+      text-align: center;
+      font-size: 15px;
+      opacity: 0.5;
+      margin-bottom: 28px;
+    }
+
+    .content {
+      border: 1px solid rgba(0,0,0,0.2);
+      padding: 22px;
+      border-radius: 8px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.75;
+      white-space: pre-line;
+      margin: 0;
+    }
+
+    .next {
+      margin-top: 32px;
+      text-align: right;
+      font-size: 15px;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .next:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="entry">
+    <div class="date">2026.02.11</div>
+
+    <div class="content">
+      <p>
+오늘은
+
+아무 말도 하지 않았다.
+말을 꺼내면
+괜히 모든 게 망가질 것 같아서.
+
+보여주려고 쓰는 일기인데
+정작 제일 중요한 말은
+아직 남겨두었다.
+      </p>
+    </div>
+
+    <div class="next" onclick="goNextDate()">
+      다음 일기 ▶
+    </div>
+  </div>
+
+  <!-- ✅ 자바스크립트 (절대 style 안에 넣지 말기) -->
+  <script>
+    function goNextDate() {
+      const current = new Date("2026-02-11");
+      current.setDate(current.getDate() + 1);
+
+      const y = current.getFullYear();
+      const m = String(current.getMonth() + 1).padStart(2, '0');
+      const d = String(current.getDate()).padStart(2, '0');
+
+      location.href = `${y}-${m}-${d}.html`;
+    }
+  </script>
+</body>
+</html>
