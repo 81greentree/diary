@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>2026.02.11</title>
+
+  <!-- 한글 손글씨 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 60px 24px;
+      font-family: 'Gamja Flower', cursive;
+      color: #111;
+
+      /* 종이 질감 배경 */
+      background-color: #fdfdfb;
+      background-image:
+        linear-gradient(0deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+      background-size: 3px 3px;
+    }
+
+    .entry {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255,255,255,0.85);
+      padding: 36px 28px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .date {
+      text-align: center;
+      font-size: 15px;
+      opacity: 0.5;
+      margin-bottom: 28px;
+    }
+
+    .content {
+      border: 1px solid rgba(0,0,0,0.2);
+      padding: 22px;
+      border-radius: 8px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.75;
+      white-space: pre-line;
+      margin: 0;
+    }
+
+    .next {
+      margin-top: 32px;
+      text-align: right;
+      font-size: 15px;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .next:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="entry">
+    <div class="date">2026.02.11</div>
+
+    <div class="content">
+      <p>
+넌20대를 누구와어떻게보냈어? 다른누군가를만났니? 난 아무와도 예쁜사랑 못했어 대신 가르멜봉쇄수녀원에서 인연이되어만난 교수님들이 있었고 어떤 교수님 한분은 날 유학보내고싶어하셨어 영어를 너무 좋아해서 유학가고싶었는데 차마 말못하고 거절했어 공으로받은 1억이 있다고 나에게 공부시키는걸로 이돈을 뜻있게쓰고싶다하셨는데 그땐 넝 부담스러웠어 그리고 어떤 다른 부산대심리학과 교수님은 대학원 심리학과에 들여보내주고싶다하셨어 나를 조교로 쓰고싶어하셨지. 참 웃기지 대학원두 성적안보고 교수백으로 그냥 들어갈수있다는걸그때처음알았어 부산대 심리학과 대학원은 학부생들도 들어가기 어렵기로 유명했어 근데 난 대학원보다 유학보다 수녀원에 들어가고싶었어 그렇게난너없는20대를수녀가되지도그렇다고유학한것도대학원을다닌것도아닌오랜방황을했었어
+      </p>
+    </div>
+
+    <div class="next" onclick="goNextDate()">
+      다음 일기 ▶
+    </div>
+  </div>
+
+  <!-- ✅ 자바스크립트 (절대 style 안에 넣지 말기) -->
+  <script>
+    function goNextDate() {
+      const current = new Date("2026-02-11");
+      current.setDate(current.getDate() + 1);
+
+      const y = current.getFullYear();
+      const m = String(current.getMonth() + 1).padStart(2, '0');
+      const d = String(current.getDate()).padStart(2, '0');
+
+      location.href = `${y}-${m}-${d}.html`;
+    }
+  </script>
+</body>
+</html>
