@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>2026.02.16</title>
+
+  <!-- 한글 손글씨 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 60px 24px;
+      font-family: 'Gamja Flower', cursive;
+      color: #111;
+
+      /* 종이 질감 배경 */
+      background-color: #fdfdfb;
+      background-image:
+        linear-gradient(0deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+      background-size: 3px 3px;
+    }
+
+    .entry {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255,255,255,0.85);
+      padding: 36px 28px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .date {
+      text-align: center;
+      font-size: 15px;
+      opacity: 0.5;
+      margin-bottom: 28px;
+    }
+
+    .content {
+      border: 1px solid rgba(0,0,0,0.2);
+      padding: 22px;
+      border-radius: 8px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.75;
+      white-space: pre-line;
+      margin: 0;
+    }
+
+    .next {
+      margin-top: 32px;
+      text-align: right;
+      font-size: 15px;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .next:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="entry">
+    <div class="date">2026.02.16</div>
+
+    <div class="content">
+      <p>
+무응답으로 내게 주는 네 메세지를 생각하고 있다. 내가 준 모진 말들에 그냥 멈쳐버린 너. 넌 상처받았지만 내겐 상처주지 않는 선에서 정리한 네 모습에 감사함을 느낀다. 그렇게 네게 폭포수처럼 쏟아 내려서 미안하다. 내 가시 돋힌 공격에 무방비 상태로 넘어지고 다친 네 마음을 위로하기엔 내가 너무 염치가 없다. 난 자격도 없이 널 좋아했고 욕심을 냈고 애기 마냥 말도 안되는 투정으로 널 비난했다. 내가 먼저 선을 넘어버렸고 네가 도망칠만 했다. 난 네가 추억이 아닌 진짜인 존재로 느끼고 싶었지만 지금 생각해보니 넌 카톡 할 때 이미 톡만 하는 거로 선을 정해놓고 마음을 열 수밖에 없었겠다. 너를 찾아서 기뻤고 잠시였지만 너와 대화하며 가진 내 건강도 너에게 감사하다. 돌아보니 너에게 받은 것이 많은 난 내 눈먼 투정에 널 지키지 못했고 날 지키지 못했다. 그 선을 휼륭히 지켜줘서 고맙고 침묵으로 끝내주어 다행이다. 그리고 만약 내가 싱글이였다면 널 찾지 않았을 꺼다. 내 아픔을 너랑 함께 할 순 없었다. 내 삶에 너를 들여놓고 싶지 않았으니까. 차라리 자격이 안된다 해도 지금 이대로가 좋았다. 언젠가 다시 꼭 만나자. 그땐 내가 건강하게 널 마주하고 싶다. 혹시 나에게 진 빛이 조금 있다 생각한다면 난 괜찮다. 내 메일 아니까 결혼이라는 좋은 소식 있으면 연락해라.
+      </p>
+    </div>
+
+    <div class="next" onclick="goNextDate()">
+      다음 일기 ▶
+    </div>
+  </div>
+
+  <!-- ✅ 자바스크립트 (절대 style 안에 넣지 말기) -->
+  <script>
+    function goNextDate() {
+      const current = new Date("2026-02-16");
+      current.setDate(current.getDate() + 1);
+
+      const y = current.getFullYear();
+      const m = String(current.getMonth() + 1).padStart(2, '0');
+      const d = String(current.getDate()).padStart(2, '0');
+
+      location.href = `${y}-${m}-${d}.html`;
+    }
+  </script>
+</body>
+</html>
